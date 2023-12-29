@@ -5,14 +5,14 @@ plugins {
 
 android {
     namespace = BuildVersion.environment.applicationId
-    compileSdk = 33
+    compileSdk = BuildVersion.environment.compileSdkVersion
 
     defaultConfig {
         applicationId = BuildVersion.environment.applicationId
-        minSdk = 24
-        targetSdk = 33
-        versionCode = 1
-        versionName = "1.0"
+        minSdk = BuildVersion.environment.minSdkVersion
+        targetSdk = BuildVersion.environment.targetSdkVersion
+        versionCode = BuildVersion.environment.appVersionCode
+        versionName = BuildVersion.environment.appVersionName
 
         testInstrumentationRunner = BuildVersion.testEnvironment.instrumentationRunner
         vectorDrawables {
