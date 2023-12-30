@@ -1,28 +1,28 @@
 [versions]
-afalabarce-jetpackcompose = "1.7.5"
-androidx-activity = "1.8.0"
+afalabarce-jetpackcompose = "1.7.6"
+androidx-activity = "1.8.2"
 androidx-arch-core = "2.2.0"
 androidx-arch-testing = "2.2.0"
 androidx-biometric = "1.2.0-alpha05"
-androidx-compose-animation = "1.6.0-alpha07"
-androidx-compose-compiler = "1.5.3"
-androidx-compose-material3 = "1.2.0-alpha09"
-androidx-compose-ui = "1.6.0-alpha07"
+androidx-compose-animation = "1.6.0-beta03"
+androidx-compose-compiler = "1.5.7"
+androidx-compose-material3 = "1.2.0-beta01"
+androidx-compose-ui = "1.6.0-beta03"
 androidx-core-ktx = "1.12.0"
 androidx-core-splashscreen = "1.1.0-alpha02"
-androidx-datastore = "1.1.0-alpha05"
+androidx-datastore = "1.1.0-alpha07"
 androidx-emoji2 = "1.4.0"
 androidx-lifecycle-extensions = "2.2.0"
-androidx-lifecycle-service = "2.7.0-alpha02"
-androidx-lifecycle-viewmodel = "2.7.0-alpha02"
+androidx-lifecycle-service = "2.7.0-rc02"
+androidx-lifecycle-viewmodel = "2.7.0-rc02"
 androidx-multidex = "2.0.1"
-androidx-navigation = "2.7.4"
+androidx-navigation = "2.7.6"
 androidx-paging = "3.3.0-alpha02"
-androidx-room = "2.6.0-rc01"
-androidx-test = "1.6.0-alpha04"
-androidx-test-core = "1.6.0-alpha02"
-androidx-test-espresso = "3.6.0-alpha01"
-androidx-test-ext-junit = "1.2.0-alpha01"
+androidx-room = "2.6.1"
+androidx-test = "1.6.0-alpha05"
+androidx-test-core = "1.6.0-alpha04"
+androidx-test-espresso = "3.6.0-alpha02"
+androidx-test-ext-junit = "1.2.0-alpha02"
 com-agoda-kakao = "2.4.0"
 com-google-accompanist = "0.33.2-alpha"
 com-google-code-gson = "2.10.1"
@@ -31,13 +31,13 @@ com-jakewharton-timber = "5.0.1"
 com-squareup-okhttp3 = "5.0.0-alpha.11"
 com-squareup-retrofit2 = "2.9.0"
 de-mannodermaus-junit5 = "1.3.0"
-desugar-jdk-libs = "2.0.3"
+desugar-jdk-libs = "2.0.4"
 detekt-version = "1.23.1"
-hilt-compose = "1.1.0-beta01"
+hilt-compose = "1.1.0"
 io-coil-kt = "2.4.0"
 io-mockk = "1.13.8"
 kotlinx-coroutines-test = "1.7.3"
-material-icons-extended = "1.6.0-alpha07"
+material-icons-extended = "1.6.0-beta03"
 moshi-version = "1.15.0"
 org-amshove-kluent-android = "1.73"
 org-apache-logging-log4j-core = "3.0.0-alpha1"
@@ -46,15 +46,16 @@ org-jetbrains-kotlinx-coroutines-android = "1.7.3"
 org-junit-jupiter = "5.10.0"
 org-robolectric = "4.10.3"
 plugin-ben-manes-version = "0.49.0"
-plugin-gradle-version = "8.1.0"
+plugin-gradle-version = "8.2.0"
 plugin-kotlin-version = "1.9.10"
-plugin-ksp-version = "1.9.10-1.0.13"
+plugin-ksp-version = "1.9.21-1.0.16"
 plugin-littlerobots-version = "0.8.1"
 plugin-mannodermaus-version = "1.9.3.0"
 raamcosta-version = "1.9.54"
 junit = "4.13.2"
 appcompat = "1.6.1"
-material = "1.9.0"
+material = "1.11.0"
+compose-bom-version = "2023.10.01"
 
 [libraries]
 androidx-activity-activity-compose = { module = "androidx.activity:activity-compose", version.ref = "androidx-activity" }
@@ -137,7 +138,9 @@ org-robolectric = { module = "org.robolectric:robolectric", version.ref = "org-r
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
-
+debug-androidx-compose-tooling = { module = "androidx.compose.ui:ui-tooling"}
+debug-androidx-compose-manifest = { module = "androidx.compose.ui:ui-test-manifest"}
+compose-bom = { module = "androidx.compose:compose-bom", version.ref = "compose-bom-version" }
 [bundles]
 compilers-ksp-generic = [
     "com-google-dagger-hilt-android-compiler",
@@ -280,6 +283,11 @@ testing-unit = [
 ]
 testing-unit-runtime = [
     "org-junit-jupiter-junit-jupiter-engine",
+]
+
+testing-debug-implementation = [
+    "debug-androidx-compose-tooling",
+    "debug-androidx-compose-manifest"
 ]
 
 [plugins]
